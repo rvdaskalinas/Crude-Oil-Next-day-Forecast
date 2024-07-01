@@ -6,7 +6,6 @@ This repository contains an R script for forecasting the next day's crude oil pr
 
 The script requires the following packages:
 
-- "quantmod"
-- "ggplot2"
-- "forecast"
-
+- `quantmod`
+- `forecast`
+- `ggplot2`
