@@ -26,7 +26,7 @@ ggplot(oil_prices_df, aes(x = Date, y = Price)) +
 # Arima model
 arima_model <- auto.arima(log_oil_prices, seasonal = FALSE)
 
-# Next-day forecast
+# Next-day WTI forecast
 log_forecast <- forecast(arima_model, h = 1)
 next_day_forecast <- data.frame(
   Date = index(log_oil_prices)[length(log_oil_prices)] + 1,
@@ -34,7 +34,6 @@ next_day_forecast <- data.frame(
   Lower = exp(log_forecast$lower[, 2]),
   Upper = exp(log_forecast$upper[, 2])
 )
-
 print(next_day_forecast)
 
 
